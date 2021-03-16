@@ -24,9 +24,6 @@ debug.hwui.target_cpu_time_percent=20
 # CNE
 persist.vendor.cne.feature=1
 
-# DPM
-persist.vendor.dpm.feature=1
-
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
