@@ -20,3 +20,6 @@ allow vendor_mdm_helper self:capability { sys_admin };
 
 # Allow mdm_helper to use wakelocks
 wakelock_use(vendor_mdm_helper)
+
+# Allow mdm_helper to execute /vendor/bin/ks
+allow vendor_mdm_helper ks_exec:file execute_no_trans;
