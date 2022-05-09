@@ -1,3 +1,7 @@
+typeattribute vendor_mdm_helper mlstrustedsubject;
+
+init_daemon_domain(vendor_mdm_helper)
+
 # Allow MDM helper to read SSR property
 get_prop(vendor_mdm_helper, vendor_ssr_prop)
 
@@ -25,5 +29,6 @@ wakelock_use(vendor_mdm_helper)
 allow vendor_mdm_helper ks_exec:file execute_no_trans;
 
 # Needed by ks in order to access the efs sync partitions
-allow vendor_mdm_helper block_device:dir r_dir_perms;
-allow vendor_mdm_helper efs_boot_device:blk_file r_file_perms;
+allow vendor_mdm_helper block_device:dir rw_dir_perms;
+allow vendor_mdm_helper efs_boot_device:blk_file rw_file_perms;
+allow vendor_mdm_helper vendor_efs_boot_dev:blk_file rw_file_perms;
