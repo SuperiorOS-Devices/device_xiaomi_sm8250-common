@@ -165,6 +165,7 @@ $(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := $(SSI_PARTITIONS_RESERVED_SIZE)))
 $(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 30720000))
+BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT := -1
 
 # Platform
 BOARD_VENDOR := xiaomi
