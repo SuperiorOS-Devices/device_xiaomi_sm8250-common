@@ -266,7 +266,6 @@ persist.vendor.radio.cdma_cap=true
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.data_con_rprt=1
 persist.vendor.radio.data_ltd_sys_ind=1
-persist.vendor.radio.add_power_save=1
 persist.vendor.radio.dynamic_sar=1
 persist.vendor.radio.enable_temp_dds=true
 persist.vendor.radio.enableadvancedscan=true
@@ -280,6 +279,10 @@ persist.vendor.radio.sib16_support=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.com.android.dataroaming=true
 ro.telephony.default_network=33,33
+
+# Radio Perf
+# RIL Battery Saving off
+persist.vendor.radio.add_power_save=0
 
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
