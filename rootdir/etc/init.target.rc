@@ -292,6 +292,12 @@ service vendor.lowi /vendor/bin/sscrpcd
    group system wakelock
    capabilities BLOCK_SUSPEND
 
+on property:sys.boot_completed=1
+    # Enable ZRAM on boot_complete
+    rm /data/unencrypted/zram_swap
+    swapon_all /vendor/etc/fstab.qcom
+    write /proc/sys/vm/swappiness 100
+
 #pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
