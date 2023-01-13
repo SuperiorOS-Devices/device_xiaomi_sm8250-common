@@ -51,5 +51,5 @@ allow hal_vibrator_default {
   persist_subsys_file
   sysfs
   sysfs_leds
-}:file w_file_perms;
+}:file rw_file_perms;
 
