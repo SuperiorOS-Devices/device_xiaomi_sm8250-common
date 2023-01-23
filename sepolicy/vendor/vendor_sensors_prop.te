@@ -1,0 +1,1 @@
+get_prop(vendor_hal_citsensorservice_xiaomi_default, vendor_sensors_prop)
