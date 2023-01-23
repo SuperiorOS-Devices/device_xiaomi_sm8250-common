@@ -41,3 +41,5 @@ set_prop(hal_power_default, vendor_power_prop)
 type vendor_touchfeature_device, dev_type;
 
 allow hal_power_default vendor_touchfeature_device:chr_file rw_file_perms;
+
+allow hal_power_default self:capability { sys_admin };
