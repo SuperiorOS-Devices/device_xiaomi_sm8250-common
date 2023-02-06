@@ -55,6 +55,17 @@ on init
     write /dev/sys/fs/by-name/userdata/data_io_flag 56
     write /dev/sys/fs/by-name/userdata/node_io_flag 56
 
+service vendor.camera-provider-2-4 /vendor/bin/hw/android.hardware.camera.provider@2.4-service_64
+    override
+    interface android.hardware.camera.provider@2.4::ICameraProvider legacy/0
+    interface vendor.qti.hardware.camera.postproc@1.0::IPostProcService camerapostprocservice
+    class hal
+    user cameraserver
+    group audio camera input drmrpc oem_2907
+    ioprio rt 4
+    capabilities SYS_NICE
+    writepid /dev/cpuset/camera-daemon/tasks /dev/stune/foreground/tasks
+
 on early-fs
     start vold
 
@@ -89,6 +100,13 @@ on fs
     chmod 0666 /dev/xlog
     chown system system /sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/custom_wave
     chmod 0666  /sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/custom_wave
+
+    # Camera Server permissions
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+    chown cameraserver cameraserver /mnt/vendor/persist/camera
+    chmod 0660 /dev/cpuset/camera-daemon/tasks
+    chmod 0775 /data/vendor/camera
 
 on fs && property:ro.build.ab_update=true
     mount ext4 /dev/block/bootdevice/by-name/rescue /mnt/rescue noatime
