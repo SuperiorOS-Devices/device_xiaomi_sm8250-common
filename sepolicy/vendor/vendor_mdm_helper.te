@@ -12,6 +12,11 @@ allow vendor_mdm_helper mnt_vendor_file:dir rw_dir_perms;
 allow vendor_mdm_helper mnt_vendor_file:file rw_file_perms;
 allow vendor_mdm_helper mnt_vendor_file:file create_file_perms;
 
+# Needed to allow boot over PCIe
+allow vendor_mdm_helper vendor_mhi_device:chr_file rw_file_perms;
+
+# Allow mdm_helper sys_admin capability
 allow vendor_mdm_helper self:capability { sys_admin };
 
+# Allow mdm_helper to use wakelocks
 wakelock_use(vendor_mdm_helper)
