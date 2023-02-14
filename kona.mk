@@ -360,6 +360,10 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_hevcdec \
     libcodec2_soft_hevcenc
 
+# Media Configs
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 # Mlipay
 PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.mlipay@1.1.vendor \
