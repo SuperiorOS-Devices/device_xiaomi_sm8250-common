@@ -29,66 +29,6 @@
 
 target=`getprop ro.board.platform`
 
-function configure_read_ahead_kb_values() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    dmpts=$(ls /sys/block/*/queue/read_ahead_kb | grep -e dm -e mmc)
-
-    # Set 128 for <= 3GB &
-    # set 512 for >= 4GB targets.
-    if [ $MemTotal -le 3145728 ]; then
-        echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        for dm in $dmpts; do
-            echo 128 > $dm
-        done
-    else
-        echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        for dm in $dmpts; do
-            echo 128 > $dm
-        done
-    fi
-}
-
-function configure_memory_parameters() {
-    # Set Memory parameters.
-    #
-    # Set per_process_reclaim tuning parameters
-    # All targets will use vmpressure range 50-70,
-    # All targets will use 512 pages swap size.
-    #
-    # Set Low memory killer minfree parameters
-    # 32 bit Non-Go, all memory configurations will use 15K series
-    # 32 bit Go, all memory configurations will use uLMK + Memcg
-    # 64 bit will use Google default LMK series.
-    #
-    # Set ALMK parameters (usually above the highest minfree values)
-    # vmpressure_file_min threshold is always set slightly higher
-    # than LMK minfree's last bin value for all targets. It is calculated as
-    # vmpressure_file_min = (last bin - second last bin ) + last bin
-    #
-    # Set allocstall_threshold to 0 for all targets.
-    #
-
-ProductName=`getprop ro.board.platform`
-low_ram=`getprop ro.config.low_ram`
-
-if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ]; then
-      configure_read_ahead_kb_values
-fi
-}
-
-function start_hbtp()
-{
-        # Start the Host based Touch processing but not in the power off mode.
-        bootmode=`getprop ro.bootmode`
-        if [ "charger" != $bootmode ]; then
-                start vendor.hbtp
-        fi
-}
-
 case "$target" in
     "msm7201a_ffa" | "msm7201a_surf" | "msm7627_ffa" | "msm7627_6x" | "msm7627a"  | "msm7627_surf" | \
     "qsd8250_surf" | "qsd8250_ffa" | "msm7630_surf" | "msm7630_1x" | "msm7630_fusion" | "qsd8650a_st1x")
@@ -4660,16 +4600,6 @@ case "$target" in
 	ddr_type4="07"
 	ddr_type5="08"
 
-	# cpuset parameters
-        echo 0-1     > /dev/cpuset/background/cpus
-        echo 0-3     > /dev/cpuset/system-background/cpus
-        echo 4-6     > /dev/cpuset/foreground/boost/cpus
-        echo 0-2,4-6 > /dev/cpuset/foreground/cpus
-        echo 0-7     > /dev/cpuset/top-app/cpus
-        echo 0-3     > /dev/cpuset/restricted/cpus
-        echo 0-7     > /dev/cpuset/camera-daemon/cpus
-        echo 0-7     > /dev/cpuset/camera-daemon-dedicated/cpus
-
 	# Enable bus-dcvs
 	for device in /sys/devices/platform/soc
 	do
@@ -4757,6 +4687,6 @@ esac
 
 # Post-setup services
 case "$target" in
-    "msm8909" | "msm8916" | "msm8937" | "msm8952" | "msm8953" | "msm8994" | "msm8992" | "msm8996" | "msm8998" | "sdm660" | "apq8098_latv" | "sdm845" | "sdm710" | "msmnile" | "msmsteppe" | "sm6150" | "kona" | "lito" | "trinket" | "atoll" | "bengal" | "sdmshrike")
+    "kona")
         setprop vendor.post_boot.parsed 1
     ;;
