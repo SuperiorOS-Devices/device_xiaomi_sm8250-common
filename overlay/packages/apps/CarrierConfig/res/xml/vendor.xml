@@ -3224,6 +3224,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
     <carrier_config mcc="405" mnc="66,67,750,751,752,753,754,755,756">
         <int name="carrier_default_wfc_ims_mode_int" value="2"/>
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true"/>
+        <boolean name="carrier_vt_available_bool" value="true"/>
         <boolean name="editable_wfc_mode_bool" value="false"/>
         <boolean name="hide_wfc_mode_option" value="true"/>
         <boolean name="wos_flight_mode_support_bool" value="true"/>
@@ -3238,6 +3239,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
     <carrier_config mcc="405" mnc="799,70,845,846,848,849,850,852,853">
         <int name="carrier_default_wfc_ims_mode_int" value="2"/>
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true"/>
+        <boolean name="carrier_vt_available_bool" value="true"/>
         <boolean name="editable_wfc_mode_bool" value="false"/>
         <boolean name="hide_wfc_mode_option" value="true"/>
         <boolean name="wos_flight_mode_support_bool" value="true"/>
@@ -3246,6 +3248,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="carrier_use_ims_first_for_emergency_bool" value="true"/>
         <int name="carrier_default_wfc_ims_mode_int" value="2"/>
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true"/>
+        <boolean name="carrier_vt_available_bool" value="true"/>
         <boolean name="editable_wfc_mode_bool" value="false"/>
         <boolean name="hide_wfc_mode_option" value="true"/>
         <boolean name="carrier_name_override_bool" value="false"/>
@@ -3275,6 +3278,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="editable_wfc_mode_bool" value="false"/>
         <boolean name="hide_wfc_mode_option" value="true"/>
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true"/>
+        <boolean name="carrier_vt_available_bool" value="true"/>
         <boolean name="mtk_carrier_wfc_get_location_always" value="true"/>
     </carrier_config>
     <carrier_config mcc="419" mnc="2">
@@ -6713,10 +6717,12 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
     <!--印度 IN Airtel-->
     <carrier_config mcc="405" mnc="51,52,53,54,55,56">
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="true" />
     </carrier_config>
     <!--印度 IN RJIO-->
     <carrier_config mcc="405" mnc="840,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874">
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="true" />
     </carrier_config>
     <!--印度 IN Vodafone-->
     <carrier_config mcc="405" mnc="66,67,750,751,752,753,754,755,756">
