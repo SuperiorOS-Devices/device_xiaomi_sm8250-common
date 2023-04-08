@@ -609,6 +609,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="fallback_sms_not_allowed_in_roaming" value="true" />
     </carrier_config>
 
+    <!-- IDC Moldova -->
+    <carrier_config mcc="259" mnc="15">
+        <boolean name="carrier_vt_available_bool" value="true" />
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="carrier_wfc_supports_ims_preferred_bool" value="true" />
+    </carrier_config>
+
     <carrier_config mcc="260" mnc="02">
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
