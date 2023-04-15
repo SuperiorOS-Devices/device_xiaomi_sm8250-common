@@ -148,7 +148,7 @@ vendor.hw.fm.init=0
 persist.vendor.camera.logInfoMask=false
 
 # Chipset
-ro.soc.manufacturer=Qualcomm
+ro.soc.manufacturer=QTI
 ro.soc.model=SM8250
 
 # Crypto
