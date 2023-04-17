@@ -146,6 +146,7 @@ vendor.hw.fm.init=0
 
 # Camera
 persist.vendor.camera.logInfoMask=false
+persist.vendor.camera.perflock.enable=0
 
 # Chipset
 ro.soc.manufacturer=QTI
