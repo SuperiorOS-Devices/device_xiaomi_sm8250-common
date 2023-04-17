@@ -87,6 +87,9 @@ persist.vendor.sys.pay                          u:object_r:vendor_tee_listener_p
 # RIL
 ro.vendor.ril                                   u:object_r:vendor_public_vendor_default_prop:s0
 
+# RIL Path
+vendor.rild.libpath                                    u:object_r:vendor_radio_prop:s0
+
 # Sensor
 persist.sensor.                                 u:object_r:vendor_sensors_prop:s0
 invn.hal.data.                                  u:object_r:vendor_sensors_prop:s0
