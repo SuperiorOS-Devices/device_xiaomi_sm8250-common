@@ -230,11 +230,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service
 
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    memtrack.kona
-
-PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libdisplayconfig.system.qti \
     libqdMetaData \
@@ -255,6 +250,8 @@ PRODUCT_PACKAGES += \
 # Advanced_sf_offsets configuration 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/advanced_sf_offsets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/advanced_sf_offsets.xml
+
+TARGET_DISABLE_MEMTRACK := true
 
 # DRM
 PRODUCT_PACKAGES += \
