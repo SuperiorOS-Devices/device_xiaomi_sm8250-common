@@ -63,6 +63,9 @@ ro.lmk.kill_timeout_ms=15
 # LMK
 ro.config.low_ram=false
 
+# Logs
+persist.log.tag.OpenGLRenderer=S
+
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
