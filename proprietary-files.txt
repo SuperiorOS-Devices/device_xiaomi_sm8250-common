@@ -1,4 +1,4 @@
-# Unpinned blobs from alioth_eea-user 13 RKQ1.211001.001 V14.0.7.0.TKHEUXM release-keys
+# Unpinned blobs from alioth_global-user 13 TKQ1.220829.002 V14.0.7.0.TKHMIXM release-keys
 
 # ADSP
 vendor/bin/adsprpcd
@@ -833,8 +833,7 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Vibrator (Xiaomi)
-lib/vendor.xiaomi.hardware.vibratorfeature@1.0.so
-lib64/vendor.xiaomi.hardware.vibratorfeature@1.0.so
+vendor/lib64/vendor.xiaomi.hardware.vibratorfeature@1.0.so
 vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
 vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
 vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature@1.0-service.rc
