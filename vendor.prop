@@ -231,6 +231,9 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
+# GFX
+ro.config.avoid_gfx_accel=true
+
 # GPS
 persist.backup.ntpServer=0.pool.ntp.org
 
