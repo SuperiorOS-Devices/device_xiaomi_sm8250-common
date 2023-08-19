@@ -98,4 +98,8 @@
         <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
         <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
     </string-array>
+
+    <!-- Whether the new Auto Selection Network UI should be shown -->
+     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
+
 </resources>
