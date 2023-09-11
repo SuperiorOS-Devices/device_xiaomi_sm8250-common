@@ -152,6 +152,8 @@ vendor.hw.fm.init=0
 persist.bluetooth.sbc_hd_higher_bitrate=1
 persist.vendor.bt.a2dp.aac_whitelist=false
 persist.vendor.bt.a2dp.hal.implementation=true
+persist.vendor.btstack.enable.twsplussho=true
+
 
 
 # Camera
