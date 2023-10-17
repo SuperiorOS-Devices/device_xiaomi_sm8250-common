@@ -150,6 +150,7 @@ ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
 vendor.hw.fm.init=0
 persist.bluetooth.sbc_hd_higher_bitrate=1
+persist.vendor.bt.a2dp.aac_whitelist=false
 
 # Camera
 persist.vendor.camera.logInfoMask=false
